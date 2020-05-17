@@ -1,7 +1,7 @@
 # passwordGen
-##Javascript based password generator
+#Javascript based password generator
 
-#Created Variables for Criteria using string.split method
+###Created Variables for Criteria using string.split method
 Criteria included atleast 1 of the follow:
     - Upper Case Letter
     - Lower Case Letter
@@ -20,7 +20,7 @@ Created a function to generate the password (onClick html triggers this)
 using if and else statements to give a result.
 <br />
 Result is written innerHTML to text area on index.html
-Alt-H2
+<br />
 The Bonus was to create a clipboard to copy
 Creating a function using textarea.select
 and execCommand("Copy") in Javascript
