@@ -33,5 +33,5 @@ with *onClick* to that function allows user to copy their generated password
 <br /><br />
 Site Found Here:
 [https://bigmak88.github.io/passwordGen/]
-<br />
+
 ![alt text](https://bigmak88.github.io/passwordGen/assets/screenshotPWGen.PNG)
