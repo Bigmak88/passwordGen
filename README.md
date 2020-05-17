@@ -1,8 +1,8 @@
 # passwordGen
-#Javascript based password generator
+## Javascript based password generator
 
-###Created Variables for Criteria using string.split method
-Criteria included atleast 1 of the follow:
+### Created Variables for Criteria using string.split method
+### Criteria included atleast 1 of the follow:
     - Upper Case Letter
     - Lower Case Letter
     - A Number
