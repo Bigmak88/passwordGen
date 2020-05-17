@@ -1,60 +1,74 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-var passwordText = document.querySelector("#password");
+// Create Variables for Criteria (string.split method)
+  
+var getUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var getUpperArr = getUpper.split("");
+var getLower = "abcdefghijklmnopqrstuvwxyz";
+var getLowerArr = getLower.split("");
+var getNumber = "0123456789";
+var numberArr = getNumber.split("");
+var getSymbol = "!#$%&\()*+,-./:;<=>?@^[\\]^_`{|}~";
+var symbolArr = getSymbol.split("");
 
-passwordText.value = password;
+// Create a Function to GeneratePass
 
-//Create Object for Password Criteria
-//var password = generatePassword(length, getRandomLower, getRandomUpper, getRandomSymbol, getRandomNumber)  
+function generatePass(){
+ var allChars = [];
+ var result = "";
 
-// Write password to the #password input
-function writePassword() {
-  const length = prompt("Choose a length of at least 8 characters and no more than 128 characters");
+// Create Prompt
 
-  if (length <= 128) {
-    const upper = confirm("Do you want Uppercase included?");
+ var promptLength = prompt("How many characters would you like your password to be?");
 
-    if (getRandomUpper == true) {
-      const lower = confirm("Do you want Lowercase included?")
+ // length must be between 8-128 characters
 
-      if (getRandomLower == true) {
-        const symbols = confirm("Do you want Special characters included?");
+ if(promptLength <8 || promptLength > 128){
+     alert("You must have a password between 8 and 128 characters!");
+ }
 
-        if (getRandomSymbol == true) {
-          const numbers = confirm("Do you want Numbers included?");
+// confirm criteria
+ 
+ else{
+     if(confirm("Do you want to include upper case letters?")){
+         Array.prototype.push.apply(allChars, getUpperArr);
+     }
 
-          if(getRandomNumber == true) {
-            return '';
-          }
-        
-        }
-      }
-    }
-  }
-  }
+     if(confirm("Do you want to include lower case letters?")){
+         Array.prototype.push.apply(allChars, getLowerArr);
+     }
 
-// Generates a RandomLower
-  function getRandomLower() {
-    return String.fromCharCode(Math.floor(Math.random() *26) +97);
-  }
+     if(confirm("Do you want to include numbers?")){
+         Array.prototype.push.apply(allChars, numberArr);
+     }
 
-// Generates a RandomUpper
-  function getRandomUpper() {
-    return String.fromCharCode(Math.floor(Math.random() *26) +65);
-  }
+     if(confirm("Do you want to include special characters?")){
+         Array.prototype.push.apply(allChars, symbolArr);
+     }
 
-// Generates a Number
-  function getRandomNumber() {
-    return String.fromCharCode(Math.floor(Math.random() *10) +48);
-  }
+     // Create an Alert for minimum critera
+     if(allChars.length===0){
+         alert("Choose at least one option to generate a password!");
+     }
 
-// Generates a Symbol
-  function getRandomSymbol() {
-    const symbols = `!@#$%^&*(){}=<>[]/,.`;
-    return symbols[Math.floor(Math.random() * symbols.length)];
-  }
+// Run for loop to use confirmed information and generate password as a result
 
-// Generates Event Listener
-generateBtn.addEventListener("click", writePassword);
+     else{
+         for(var i=0; i<promptLength; i++){
+             var random = Math.floor(Math.random()*allChars.length);
+             result += allChars[random];
+         }
+     }
+     }
 
+// Print Result to El
 
+     document.getElementById("password").innerHTML = result;
+}
+
+// Copy password with clipboard (Bonus)
+
+function copyPassword(){
+
+ document.querySelector("textarea").select();
+ document.execCommand("Copy");
+ alert("Password copied!");
+}

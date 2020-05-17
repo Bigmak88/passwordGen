@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" onclick="writePassword" class="btn">Generate Password</button>
-        </div>
-      </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <div class="header">
+        <p>Password Generator</p>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+<!-- BOOTSTRAP CARD ELEMENT ADDED -->
+     <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Generate a Password</h2>
+            <textarea readonly id="password" placeholder="Your Secure Password"></textarea>
+            
+            <div class="row justify-content-between m-0">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+                 <button onclick="generatePass()" type="button" class="btn btn-dark" style= "border-radius:20px; color:white;">Generate Password</button>
+                </div>
+               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+                 <button onclick="copyPassword()" type="button" class="btn btn-light" style= "border-radius:20px; background-color:grey; color:white;">Copy to clipboard</button>
+               </div>    
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            Thank You For Using My Password Generator! &copy;2020
+          </div>
+    </div>
+        
+<!-- JAVASCRIPT LINKED -->
+  <script src="script.js"> </script>
+
+</body>
 </html>
